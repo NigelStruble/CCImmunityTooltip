@@ -1,0 +1,9 @@
+## Interface: 20505
+## Title: CC Immunity Tooltip
+## Notes: Shows creature CC immunities in tooltips (4000+ creatures, auto-learning)
+## Author: Community
+## Version: 1.1
+## SavedVariables: CCImmunityTooltipDB
+
+CCImmunityData.lua
+CCImmunityTooltip.lua
