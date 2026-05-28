@@ -334,8 +334,10 @@ local function AddImmunityInfo(tooltip)
                     tooltip:AddLine("|cFFFF4500Immune to:|r |cFFFFFFFFALL CC|r" .. diffTag, 1, 1, 1, true)
                 end
             end
-        -- If missing only 1-2 immunities, show "ALL CC (except...)"
-        elseif #notImmuneList > 0 and #notImmuneList <= 2 then
+        -- If missing 1-3 immunities (i.e., immune to a majority of 4+/7), show "ALL CC (except...)".
+        -- 3 is the crossover: at 3 missing the "except" list is the same length as the immune list,
+        -- but the "except" form is more useful because it tells you what actually works.
+        elseif #notImmuneList > 0 and #notImmuneList <= 3 then
             local exceptList = table.concat(notImmuneList, ", ")
             if hasBanish then
                 tooltip:AddLine("|cFFFF4500Immune to:|r |cFFFFFFFFALL CC (except " .. exceptList .. ")|r" .. diffTag, 1, 1, 1, true)
